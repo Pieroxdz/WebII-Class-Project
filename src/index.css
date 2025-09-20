@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --color-primario: #1A2B4C;
+  --color-secundario: #2E86DE;
+  --color-neutro: #F4F6F8;
+  --color-texto: #2C2C2C;
+  --color-accento: #40495c;
+  --color-white: #FFFFFF;
+  --color-negro: #000000;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 200;
+  letter-spacing: -3px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  text-transform: lowercase;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#nosotros {
+  background-color: var(--color-white);
+  color: var(--color-texto);
+}
+
+#noticias {
+  background-color: var(--color-accento);
+  color: var(--color-white);
+}
+
+#historia {
+  background-color: var(--color-neutro);
+  color: var(--color-texto);
+}
+
+#eventos {
+  background-color: var(--color-secundario);
+}
+
+#main-footer {
+  background-color: var(--color-primario);
+  color: var(--color-white);
+  /* 45px y  0 */
+  padding: 2.8125rem 0;
+}
+
+.btn-link {
+  background-color: var(--color-accento);
+  color: var(--color-neutro);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: solid var(--color-accento) 1px;
+  display: inline-block;
+}
+
+.btn-link:hover {
+  background-color: transparent;
+  color: var(--color-accento);
+  border-color: solid var(--color-neutro) 3px;
+}
+
+.tabla-reporte {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabla-reporte th,
+.tabla-reporte td {
+  padding: 8px 12px;
+}
+
+.tabla-reporte thead th {
+  background-color: var(--color-primario);
+  color: var(--color-white);
+  text-align: left;
+}
+
+.tabla-reporte td {
+  border: solid 1px var(--color-neutro);
+}
+
+.tabla-reporte tbody tr:nth-child(even) {
+  background-color: var(--color-secundario);
+}
+
+@layer components {
+  [class$="-wrapper"] {
+    @apply max-w-7xl w-[95%] mx-auto px-2 sm:px-6 lg:px-8;
+  }
+}

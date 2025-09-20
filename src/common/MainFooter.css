@@ -1,0 +1,12 @@
+#redes-sociales a {
+    color: var(--color-neutro);
+    border: solid 1px;
+    padding: 16px;
+    margin-left: 4px;
+    border-radius: 50%;
+}
+
+#redes-sociales a:hover {
+    background-color: var(--color-neutro);
+    color: var(--color-primario);
+}
