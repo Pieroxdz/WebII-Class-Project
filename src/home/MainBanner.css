@@ -1,3 +1,10 @@
+.slider-container img {
+    height: calc(100vh - 64px);
+    width: 100%;
+    /* 64 px es la altura del header */
+    object-fit: cover
+}
+
 .slick-next {
     right: 100px;
 }

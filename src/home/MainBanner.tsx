@@ -7,12 +7,14 @@ import "./MainBanner.css"
 
 
 import banner1 from "./../assets/images/banner1.jpg"
+import banner2 from "./../assets/images/banner2.jpg"
+import banner3 from "./../assets/images/banner3.jpg"
 
 const MainBanner = () => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true
@@ -24,10 +26,10 @@ const MainBanner = () => {
                     <img src={banner1} alt="" />
                 </div>
                 <div>
-                    <img src={banner1} alt="" />
+                    <img src={banner2} alt="" />
                 </div>
                 <div>
-                    <img src={banner1} alt="" />
+                    <img src={banner3} alt="" />
                 </div>
             </Slider>
         </div>
