@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import type { Proveedor } from "../types/Proveedor";
+import PageHeader from "../components/PageHeader";
 
 const Proveedores = () => {
 
@@ -22,7 +23,10 @@ const Proveedores = () => {
         <>
             <section id='proveedores' className="py-20">
                 <div className="proveedores-wrapper">
-                    <h1>Proveedores</h1>
+
+                    <PageHeader pageTitle="Inversiones" pageSubtitle="Construyendo alianzas sólidas para crecer juntos" />
+
+
                     <table className="tabla-reporte">
                         <thead>
                             <tr>
