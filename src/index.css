@@ -16,6 +16,10 @@ body {
   font-family: "Urbanist", sans-serif;
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
 h1 {
   font-size: 4rem;
   font-weight: 200;

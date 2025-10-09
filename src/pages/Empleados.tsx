@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader"
 import type { Empleado } from "../types/Empleado";
+import { API_URL } from "../utils";
 
 const Empleados = () => {
 
@@ -11,7 +12,7 @@ const Empleados = () => {
     }, [])
 
     const leerServicio = () => {
-        fetch("https://servicios.campus.pe/empleados")
+        fetch(API_URL + "empleados")
             .then(response => response.json())
             .then(data => {
                 setListaEmpleados(data)
@@ -24,7 +25,7 @@ const Empleados = () => {
 
                 {listaEmpleados.map(item =>
                     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src={`https://servicios.campus.pe/${item.foto} `} alt="Imagen de la tarjeta" className="w-full h-48 object-cover" />
+                        <img src={`${API_URL}${item.foto} `} alt="Imagen de la tarjeta" className="w-full h-48 object-cover" />
                         <div className="p-6">
                             <h5 className="text-xl font-bold mb-2 text-gray-800">{`${item.nombres} ${item.apellidos}`}</h5>
                             <p className="text-gray-700 text-base">

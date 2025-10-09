@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Envio } from "../types/Envio";
+import { API_URL } from "../utils";
 
 const Envios = () => {
 
@@ -10,7 +11,7 @@ const Envios = () => {
     }, [])
 
     const leerServicio = () => {
-        fetch("https://servicios.campus.pe/envios")
+        fetch(API_URL + "envios")
             .then(response => response.json())
             .then(data => {
                 setListaEnvios(data)

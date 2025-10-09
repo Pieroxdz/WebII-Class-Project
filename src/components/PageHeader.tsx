@@ -8,7 +8,7 @@ const PageHeader = (props: PageHeaderProps) => {
         <header id="page-header" className="shadow-lg py-5">
             <div className="wrapper">
                 <h1>{props.pageTitle}</h1>
-                <p>{props.pageSubtitle}</p>
+                <p className="!m-0">{props.pageSubtitle}</p>
             </div>
         </header>
     )

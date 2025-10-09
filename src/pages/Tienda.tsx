@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader"
 import type { Categoria } from "../types/Categoria";
 import Productos from "../components/Productos";
+import { API_URL } from "../utils";
 
 const Tienda = () => {
 
@@ -12,12 +13,11 @@ const Tienda = () => {
         leerServicio()
     }, [])
 
-    const leerServicio = () => {
-        fetch("https://servicios.campus.pe/categorias")
-            .then(response => response.json())
-            .then(data => {
-                setListaCategorias(data)
-            })
+    const leerServicio = async () => {
+        const response = await fetch(API_URL + "categorias.php")
+        const data: Categoria[] = await response.json()
+        setListaCategorias(data)
+        setCategoriaSeleccionada(data[0])
     }
 
     //Va a recibir un parametro del tipo categoria definido en el interface

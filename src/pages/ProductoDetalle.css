@@ -1,0 +1,14 @@
+.tabla-detalle-producto {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-detalle-producto tr {
+    border-bottom: solid 1px var(--color-gray-300);
+}
+
+.tabla-detalle-producto tr,
+.tabla-detalle-producto th {
+    padding: 10px 20px;
+    text-align: lefts;
+}
