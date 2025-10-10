@@ -106,6 +106,9 @@ h3 {
 
 @layer components {
   [class$="wrapper"] {
-    @apply max-w-7xl w-[95%] mx-auto;
+    max-width: 80rem;
+    /* max-w-7xl */
+    width: 95%;
+    margin: 0 auto;
   }
 }

@@ -53,7 +53,7 @@ const Proveedores = () => {
         <>
             <PageHeader pageTitle='Proveedores' pageSubtitle='Construyendo alianzas para sólidas para crecer juntos' />
             <section id='proveedores' className="py-20">
-                <div className="max-w-7xl mx-auto px-3">
+                <div className="proveedores-wrapper">
                     {dibujarTabla()}
                 </div>
             </section>

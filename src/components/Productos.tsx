@@ -31,7 +31,7 @@ const Productos = (props: PageProductosProps) => {
                     const precioRebajado = item.preciorebajado
                     const precio = item.precio
                     return (
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden border-1 border-gray-200 text-center relative card-producto">
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden border-1 border-gray-200 text-center relative card-producto" key={item.idproducto}>
 
                             <Link to={"/productodetalle/" + item.idproducto}>
                                 <img src={`https://servicios.campus.pe/${(item.imagenchica ? item.imagenchica : "imagenes/nofoto.jpg")} `} alt=""

@@ -34,7 +34,7 @@ const Envios = () => {
                     </thead>
                     <tbody>
                         {listaEnvios.map(item =>
-                            <tr>
+                            <tr key={item.idempresaenvio}>
                                 <td className="text-center">{item.idempresaenvio}</td>
                                 <td>{item.nombre}</td>
                                 <td>{item.telefono}</td>

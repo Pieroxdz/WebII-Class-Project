@@ -24,7 +24,7 @@ const Empleados = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 
                 {listaEmpleados.map(item =>
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="bg-white rounded-lg shadow-lg overflow-hidden" key={item.idempleado}>
                         <img src={`${API_URL}${item.foto} `} alt="Imagen de la tarjeta" className="w-full h-48 object-cover" />
                         <div className="p-6">
                             <h5 className="text-xl font-bold mb-2 text-gray-800">{`${item.nombres} ${item.apellidos}`}</h5>
