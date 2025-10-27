@@ -11,6 +11,7 @@ import Tienda from './pages/Tienda'
 import Pagina404 from './pages/Pagina404'
 import ProductoDetalles from './pages/ProductoDetalles'
 import Carrito from './pages/Carrito'
+import Clientes from './pages/Clientes'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/empleados' element={<Empleados />} />
           <Route path='/tienda' element={<Tienda />} />
           <Route path='/productodetalle/:idproducto' element={<ProductoDetalles />} />
+          <Route path='/clientes' element={<Clientes />} />
           <Route path='/carrito' element={<Carrito />} />
           <Route path='*' element={<Pagina404 />} />
         </Routes>

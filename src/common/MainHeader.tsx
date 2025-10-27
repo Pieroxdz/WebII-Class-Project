@@ -7,7 +7,8 @@ const navigation = [
     { name: 'Inversiones', url: '/inversiones' },
     { name: 'Proveedores', url: '/proveedores' },
     { name: 'Empleados', url: '/empleados' },
-    { name: 'Tienda', url: '/tienda' }
+    { name: 'Tienda', url: '/tienda' },
+    { name: 'Clientes', url: '/clientes' }
 ]
 
 function classNames(...classes: string[]) {

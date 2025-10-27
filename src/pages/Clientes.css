@@ -1,0 +1,12 @@
+#barra-paginacion button {
+    border: 1px solid var(--color-gray-800);
+    padding: 5px 10px;
+    width: 40px;
+    text-align: center;
+    margin: 2px;
+}
+
+#barra-paginacion button:first-child,
+#barra-paginacion button:last-child {
+    width: auto;
+}
