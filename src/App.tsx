@@ -12,6 +12,7 @@ import Pagina404 from './pages/Pagina404'
 import ProductoDetalles from './pages/ProductoDetalles'
 import Carrito from './pages/Carrito'
 import Clientes from './pages/Clientes'
+import ClientesOrdenar from './pages/ClientesOrdenar'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/tienda' element={<Tienda />} />
           <Route path='/productodetalle/:idproducto' element={<ProductoDetalles />} />
           <Route path='/clientes' element={<Clientes />} />
+          <Route path='/clientesordenar' element={<ClientesOrdenar />} />
           <Route path='/carrito' element={<Carrito />} />
           <Route path='*' element={<Pagina404 />} />
         </Routes>
