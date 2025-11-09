@@ -8,6 +8,7 @@ const navigation = [
     { name: 'Proveedores', url: '/proveedores' },
     { name: 'Empleados', url: '/empleados' },
     { name: 'Tienda', url: '/tienda' },
+    { name: 'Directores', url: '/directores' },
     { name: 'Clientes', url: '/clientes' },
     { name: 'Clientes ordenar', url: '/clientesordenar' }
 ]

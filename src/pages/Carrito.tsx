@@ -17,6 +17,23 @@ const Carrito = () => {
         calcularTotal(datosCarrito)
     }
 
+    const actualizarCantidad = (idproducto: number, nuevaCantidad: number) => {
+        if (nuevaCantidad < 1 || isNaN(nuevaCantidad)) {
+            return
+        }
+
+        const carritoActualizado = listaItems.map(item => {
+            if (item.idproducto === idproducto) {
+                return { ...item, cantidad: nuevaCantidad }
+            }
+            return item
+        })
+
+        setListaItems(carritoActualizado)
+        sessionStorage.setItem("carritocompras", JSON.stringify(carritoActualizado))
+        calcularTotal(carritoActualizado)
+    }
+
     const dibujarTabla = () => {
         return (
             <table className="tabla-reporte">
@@ -34,14 +51,32 @@ const Carrito = () => {
                     {listaItems.map(item =>
                         <tr key={item.idproducto}>
                             <td className="!text-center">{item.idproducto}</td>
-                            <td >{item.nombre}</td>
-                            <td>{item.precio.toFixed(2)}</td>
-                            <td>{item.cantidad}</td>
-                            <td>{(item.precio * item.cantidad).toFixed(2)}</td>
-                            <td><i
-                                className="fa-solid fa-xmark cursor-pointer hover:text-red-600 transition-transform 
-                            duration-300 ease-in-out hover:rotate-90"
-                                title="Eliminar" onClick={() => eliminarItem(item)}></i></td>
+                            <td>{item.nombre}</td>
+                            <td className="!text-end">{item.precio.toFixed(2)}</td>
+                            <td className="!text-end">
+                                <button
+                                    onClick={() => actualizarCantidad(item.idproducto, item.cantidad - 1)}
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2">-</button>
+                                <input
+                                    type="number"
+                                    min="1"
+                                    value={item.cantidad}
+                                    className="w-16 text-end mx-2 border border-gray-300 rounded px-2 py-1"
+                                    onChange={(e) => actualizarCantidad(item.idproducto, parseInt(e.target.value) || 1)}
+                                />
+                                <button
+                                    onClick={() => actualizarCantidad(item.idproducto, item.cantidad + 1)}
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2">+</button>
+                            </td>
+                            <td className="!text-end">{(item.precio * item.cantidad).toFixed(2)}</td>
+                            <td className="!text-center">
+                                <i
+                                    className="fa-solid fa-xmark cursor-pointer hover:text-red-600 transition-transform 
+                                    duration-300 ease-in-out hover:rotate-90"
+                                    title="Eliminar"
+                                    onClick={() => eliminarItem(item)}
+                                ></i>
+                            </td>
                         </tr>
                     )}
                 </tbody>
@@ -66,7 +101,6 @@ const Carrito = () => {
         const sumaTotal = datosCarrito.reduce((acumulador: number, item: ItemCarrito) => acumulador + (item.precio * item.cantidad), 0)
         setTotal(sumaTotal)
     }
-
 
     return (
         <>
